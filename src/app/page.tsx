@@ -26,8 +26,11 @@ export default function Home() {
     }
   }, [])
 
-
-  
+  useEffect(() => {
+    if (posts?.length === 0) {
+      dispatch(getPosts())
+    }
+  }, [posts])
 
   return <>
 
